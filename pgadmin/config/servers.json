@@ -1,0 +1,13 @@
+{
+  "Servers": {
+    "1": {
+      "Name": "Transfers DB",
+      "Group": "Project Transfers",
+      "Port": 5432,
+      "Username": "transfers",
+      "Host": "db_transfers",
+      "SSLMode": "prefer",
+      "MaintenanceDB": "postgres"
+    }
+  }
+}
