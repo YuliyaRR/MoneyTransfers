@@ -1,0 +1,70 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert1-data-into-accounts-transactions-table
+      author: YR
+      changes:
+        - insert:
+            tableName: accounts-transactions
+            schemaName: app
+            columns:
+              - column:
+                  name: account_uuid
+                  valueComputed: (SELECT num FROM app.accounts JOIN app.users ON app.accounts.owner_id = app.users.uuid WHERE name = 'Client 1')
+              - column:
+                  name: transaction_id
+                  value: c933440b-1f89-4473-83d9-0db09e9f5615
+              - column:
+                  name: sum
+                  value: '100.12'
+  - changeSet:
+      id: insert2-data-into-accounts-transactions-table
+      author: YR
+      changes:
+        - insert:
+            tableName: accounts-transactions
+            schemaName: app
+            columns:
+              - column:
+                  name: account_uuid
+                  valueComputed: (SELECT num FROM app.accounts JOIN app.users ON app.accounts.owner_id = app.users.uuid WHERE name = 'Client 2')
+              - column:
+                  name: transaction_id
+                  value: 65119abf-c0ed-485d-af18-cc4bccb59227
+              - column:
+                  name: sum
+                  value: '-1000.1'
+  - changeSet:
+      id: insert3-data-into-accounts-transactions-table
+      author: YR
+      changes:
+        - insert:
+            tableName: accounts-transactions
+            schemaName: app
+            columns:
+              - column:
+                  name: account_uuid
+                  valueComputed: (SELECT num FROM app.accounts JOIN app.users ON app.accounts.owner_id = app.users.uuid WHERE name = 'Client 1')
+              - column:
+                  name: transaction_id
+                  value: d15639c6-d49d-4c14-9e14-c7a99a84e5e5
+              - column:
+                  name: sum
+                  value: '-10.11'
+  - changeSet:
+      id: insert4-data-into-accounts-transactions-table
+      author: YR
+      changes:
+        - insert:
+            tableName: accounts-transactions
+            schemaName: app
+            columns:
+              - column:
+                  name: account_uuid
+                  valueComputed: (SELECT num FROM app.accounts JOIN app.users ON app.accounts.owner_id = app.users.uuid WHERE name = 'Client 3')
+              - column:
+                  name: transaction_id
+                  value: d15639c6-d49d-4c14-9e14-c7a99a84e5e5
+              - column:
+                  name: sum
+                  value: '10.11'
+

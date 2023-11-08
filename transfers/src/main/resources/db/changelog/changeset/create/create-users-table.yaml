@@ -1,0 +1,47 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-users-table
+      author: YR
+      changes:
+        - createTable:
+            tableName: users
+            schemaName: app
+            columns:
+              - column:
+                  name: uuid
+                  type: uuid
+                  autoIncrement: false
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: text
+                  constraints:
+                    nullable: false
+              - column:
+                  name: doc_type
+                  type: text
+                  constraints:
+                    nullable: false
+              - column:
+                  name: doc_num
+                  type: text
+                  constraints:
+                    nullable: false
+              - column:
+                  name: date_reg
+                  type: timestamp(3) without time zone
+                  constraints:
+                    nullable: false
+              - column:
+                  name: date_upd
+                  type: timestamp(3) without time zone
+                  constraints:
+                    nullable: false
+        - addUniqueConstraint:
+            schemaName: app
+            tableName: users
+            columnNames: doc_type, doc_num
+            constraintName: unique_doc_type_doc-num
+

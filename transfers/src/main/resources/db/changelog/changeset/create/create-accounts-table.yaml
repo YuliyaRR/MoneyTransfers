@@ -1,0 +1,45 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-accounts-table
+      author: YR
+      changes:
+        - createTable:
+            tableName: accounts
+            schemaName: app
+            columns:
+              - column:
+                  name: num
+                  type: uuid
+                  autoIncrement: false
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: currency
+                  type: text
+                  constraints:
+                    nullable: false
+              - column:
+                  name: balance
+                  type: numeric (100,2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: date_open
+                  type: timestamp(3) without time zone
+                  constraints:
+                    nullable: false
+              - column:
+                  name: date_upd
+                  type: timestamp(3) without time zone
+                  constraints:
+                    nullable: false
+              - column:
+                  name: owner_id
+                  type: uuid
+                  constraints:
+                    nullable: false
+                    foreignKeyName: accounts_owner_id_fk
+                    referencedTableSchemaName: app
+                    referencedTableName: users
+                    referencedColumnNames: uuid

@@ -1,0 +1,36 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-accounts-transactions-table
+      author: YR
+      changes:
+        - createTable:
+            tableName: accounts-transactions
+            schemaName: app
+            columns:
+              - column:
+                  name: account_uuid
+                  type: uuid
+                  autoIncrement: false
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    foreignKeyName: accounts_transactions_account_uuid_fk
+                    referencedTableSchemaName: app
+                    referencedTableName: accounts
+                    referencedColumnNames: num
+              - column:
+                  name: transaction_id
+                  type: uuid
+                  autoIncrement: false
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    foreignKeyName: accounts_transactions_transaction_id_fk
+                    referencedTableSchemaName: app
+                    referencedTableName: transactions
+                    referencedColumnNames: id
+              - column:
+                  name: sum
+                  type: numeric(100,2)
+                  constraints:
+                    nullable: false

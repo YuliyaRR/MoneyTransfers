@@ -1,0 +1,105 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert1-data-into-accounts-table
+      author: YR
+      changes:
+        - insert:
+            tableName: accounts
+            schemaName: app
+            columns:
+              - column:
+                  name: num
+                  valueComputed: "gen_random_uuid()"
+              - column:
+                  name: currency
+                  value: USD
+              - column:
+                  name: balance
+                  value: '1543.21'
+              - column:
+                  name: date_open
+                  valueComputed: CURRENT_TIMESTAMP
+              - column:
+                  name: date_upd
+                  valueComputed: CURRENT_TIMESTAMP
+              - column:
+                  name: owner_id
+                  valueComputed: (SELECT uuid FROM app.users WHERE name = 'Client 1')
+  - changeSet:
+      id: insert2-data-into-accounts-table
+      author: YR
+      changes:
+        - insert:
+            tableName: accounts
+            schemaName: app
+            columns:
+              - column:
+                  name: num
+                  valueComputed: "gen_random_uuid()"
+              - column:
+                  name: currency
+                  value: RUB
+              - column:
+                  name: balance
+                  value: '10023.14'
+              - column:
+                  name: date_open
+                  valueComputed: CURRENT_TIMESTAMP
+              - column:
+                  name: date_upd
+                  valueComputed: CURRENT_TIMESTAMP
+              - column:
+                  name: owner_id
+                  valueComputed: (SELECT uuid FROM app.users WHERE name = 'Client 2')
+  - changeSet:
+      id: insert3-data-into-accounts-table
+      author: YR
+      changes:
+        - insert:
+            tableName: accounts
+            schemaName: app
+            columns:
+              - column:
+                  name: num
+                  valueComputed: "gen_random_uuid()"
+              - column:
+                  name: currency
+                  value: USD
+              - column:
+                  name: balance
+                  value: '147.0'
+              - column:
+                  name: date_open
+                  valueComputed: CURRENT_TIMESTAMP
+              - column:
+                  name: date_upd
+                  valueComputed: CURRENT_TIMESTAMP
+              - column:
+                  name: owner_id
+                  valueComputed: (SELECT uuid FROM app.users WHERE name = 'Client 3')
+  - changeSet:
+      id: insert4-data-into-accounts-table
+      author: YR
+      changes:
+        - insert:
+            tableName: accounts
+            schemaName: app
+            columns:
+              - column:
+                  name: num
+                  valueComputed: "gen_random_uuid()"
+              - column:
+                  name: currency
+                  value: EUR
+              - column:
+                  name: balance
+                  value: '8147.10'
+              - column:
+                  name: date_open
+                  valueComputed: CURRENT_TIMESTAMP
+              - column:
+                  name: date_upd
+                  valueComputed: CURRENT_TIMESTAMP
+              - column:
+                  name: owner_id
+                  valueComputed: (SELECT uuid FROM app.users WHERE name = 'Client 4')

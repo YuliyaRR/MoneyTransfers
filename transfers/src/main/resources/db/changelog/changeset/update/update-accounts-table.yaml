@@ -1,0 +1,12 @@
+databaseChangeLog:
+  - changeSet:
+      id: update-accounts-table
+      author: YR
+      changes:
+        - update:
+            tableName: accounts
+            schemaName: app
+            columns:
+              - column:
+                  name: date_upd
+                  valueComputed: CURRENT_TIMESTAMP

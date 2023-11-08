@@ -1,0 +1,105 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert1-data-into-users-table
+      author: YR
+      changes:
+        - insert:
+            tableName: users
+            schemaName: app
+            columns:
+              - column:
+                  name: uuid
+                  valueComputed: "gen_random_uuid()"
+              - column:
+                  name: name
+                  value: Client 1
+              - column:
+                  name: doc_type
+                  value: PASSPORT
+              - column:
+                  name: doc_num
+                  value: AA123456
+              - column:
+                  name: date_reg
+                  valueComputed: "CURRENT_TIMESTAMP"
+              - column:
+                  name: date_upd
+                  valueComputed: "CURRENT_TIMESTAMP"
+  - changeSet:
+      id: insert2-data-into-users-table
+      author: YR
+      changes:
+        - insert:
+            tableName: users
+            schemaName: app
+            columns:
+              - column:
+                  name: uuid
+                  valueComputed: "gen_random_uuid()"
+              - column:
+                  name: name
+                  value: Client 2
+              - column:
+                  name: doc_type
+                  value: DRIVING_LICENSE
+              - column:
+                  name: doc_num
+                  value: AB123456
+              - column:
+                  name: date_reg
+                  valueComputed: "CURRENT_TIMESTAMP"
+              - column:
+                  name: date_upd
+                  valueComputed: "CURRENT_TIMESTAMP"
+  - changeSet:
+      id: insert3-data-into-users-table
+      author: YR
+      changes:
+        - insert:
+            tableName: users
+            schemaName: app
+            columns:
+              - column:
+                  name: uuid
+                  valueComputed: "gen_random_uuid()"
+              - column:
+                  name: name
+                  value: Client 3
+              - column:
+                  name: doc_type
+                  value: DRIVING_LICENSE
+              - column:
+                  name: doc_num
+                  value: FR123456
+              - column:
+                  name: date_reg
+                  valueComputed: "CURRENT_TIMESTAMP"
+              - column:
+                  name: date_upd
+                  valueComputed: "CURRENT_TIMESTAMP"
+  - changeSet:
+      id: insert4-data-into-users-table
+      author: YR
+      changes:
+        - insert:
+            tableName: users
+            schemaName: app
+            columns:
+              - column:
+                  name: uuid
+                  valueComputed: "gen_random_uuid()"
+              - column:
+                  name: name
+                  value: Client 4
+              - column:
+                  name: doc_type
+                  value: PASSPORT
+              - column:
+                  name: doc_num
+                  value: AH123456
+              - column:
+                  name: date_reg
+                  valueComputed: "CURRENT_TIMESTAMP"
+              - column:
+                  name: date_upd
+                  valueComputed: "CURRENT_TIMESTAMP"

@@ -1,0 +1,63 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert1-data-into-transactions-table
+      author: YR
+      changes:
+        - insert:
+            tableName: transactions
+            schemaName: app
+            columns:
+              - column:
+                  name: id
+                  value: c933440b-1f89-4473-83d9-0db09e9f5615
+              - column:
+                  name: currency
+                  value: USD
+              - column:
+                  name: type
+                  value: REPLENISH
+              - column:
+                  name: date
+                  valueComputed: CURRENT_TIMESTAMP
+
+  - changeSet:
+      id: insert2-data-into-transactions-table
+      author: YR
+      changes:
+        - insert:
+            tableName: transactions
+            schemaName: app
+            columns:
+              - column:
+                  name: id
+                  value: 65119abf-c0ed-485d-af18-cc4bccb59227
+              - column:
+                  name: currency
+                  value: RUB
+              - column:
+                  name: type
+                  value: WITHDRAW
+              - column:
+                  name: date
+                  valueComputed: CURRENT_TIMESTAMP
+  - changeSet:
+      id: insert3-data-into-transactions-table
+      author: YR
+      changes:
+        - insert:
+            tableName: transactions
+            schemaName: app
+            columns:
+              - column:
+                  name: id
+                  value: d15639c6-d49d-4c14-9e14-c7a99a84e5e5
+              - column:
+                  name: currency
+                  value: USD
+              - column:
+                  name: type
+                  value: TRANSFER
+              - column:
+                  name: date
+                  valueComputed: CURRENT_TIMESTAMP
+

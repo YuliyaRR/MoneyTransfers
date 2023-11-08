@@ -1,0 +1,31 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-transactions-table
+      author: YR
+      changes:
+        - createTable:
+            tableName: transactions
+            schemaName: app
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  autoIncrement: false
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: currency
+                  type: text
+                  constraints:
+                    nullable: false
+              - column:
+                  name: type
+                  type: text
+                  constraints:
+                    nullable: false
+              - column:
+                  name: date
+                  type: timestamp(3) without time zone
+                  constraints:
+                    nullable: false
