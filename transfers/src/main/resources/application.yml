@@ -1,0 +1,20 @@
+debug: true
+server:
+  port: 8081 #docker
+spring:
+  liquibase:
+    enabled: true
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://db_transfers:5432/transfers
+    username: transfers
+    password: root
+  jackson:
+    deserialization:
+      READ_UNKNOWN_ENUM_VALUES_AS_NULL: true
+      ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT: true
