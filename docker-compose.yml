@@ -1,0 +1,40 @@
+version: '3.9'
+services:
+
+  db_transfers:
+    build: postgresql
+    image: postgresql:1.0.0
+    restart: always
+    environment:
+      POSTGRES_USER: transfers
+      POSTGRES_PASSWORD: root
+    ports:
+      - "5432:5432"
+    networks:
+      - transfers_ntwrk
+
+  pgadmin:
+    build: pgadmin
+    image: pgadmin:1.0.0
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: rom@rom.com
+      PGADMIN_DEFAULT_PASSWORD: 741258
+    ports:
+      - "82:80"
+    networks:
+      - transfers_ntwrk
+
+  transfers:
+    build: transfers
+    image: transfers:1.0.0
+    depends_on:
+      - db_transfers
+    ports:
+      - "8081:8081"
+    networks:
+      - transfers_ntwrk
+
+networks:
+  transfers_ntwrk:
+    name: transfers_ntwrk
